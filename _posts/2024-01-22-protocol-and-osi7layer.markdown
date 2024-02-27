@@ -16,7 +16,7 @@ mermaid: true
 ## CBN vs PBN
 
 - CBN(circuit-based network)
-    ![alt text](./image/CBN1.png)
+    ![alt text](https://github.com/Togglia/Togglia.github.io/tree/main/_posts/image/CBN1.png)
     
     - 전화망 (PSTN)
     - connection-oriented service
@@ -30,7 +30,7 @@ mermaid: true
 
 - PBN(Packet-based network)
     
-    ![alt text](image/PBN.png)
+    ![alt text](./image/PBN.png)
     
     - Internet
     - connection-less service

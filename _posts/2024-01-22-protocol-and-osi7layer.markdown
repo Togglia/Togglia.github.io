@@ -16,7 +16,7 @@ mermaid: true
 ## CBN vs PBN
 
 - CBN(circuit-based network)
-    ![alt text](image/CBN1.png)
+    ![alt text](./image/CBN1.png)
     
     - 전화망 (PSTN)
     - connection-oriented service

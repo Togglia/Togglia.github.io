@@ -1,5 +1,5 @@
 ---
-title: protocol-osi7layer
+title: Protocol&OSI7Layer
 author: Togglia
 date: 2022-01-22 11:33:00 +0800
 categories: [무선통신망공학, 1주차]

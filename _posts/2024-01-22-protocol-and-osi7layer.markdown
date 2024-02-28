@@ -16,7 +16,7 @@ mermaid: true
 ## CBN vs PBN
 
 - CBN(circuit-based network)
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" width="50%" height="50%">
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" alt="CBN" width="50%" height="50%">
     
     - 전화망 (PSTN)
     - connection-oriented service
@@ -116,7 +116,7 @@ mermaid: true
     - routing(forwarding)
     - forwarding table (최종 결과물)
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" width="50%" height="50%">    
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" alt="Port_forwading" width="50%" height="50%">    
 
 ### 2계층 : Data-link(데이터 링크) Layer
 

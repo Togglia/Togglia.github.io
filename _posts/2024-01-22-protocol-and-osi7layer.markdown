@@ -14,7 +14,7 @@ mermaid: true
 통신분야에서 단말기 등을 접속하기 위해 사용되는 단말기기, 선로 및 교환기 등으로 구성되는 전송매체 
 
 ## CBN vs PBN
-
+<hr>
 - CBN(circuit-based network)
     
     
@@ -46,7 +46,7 @@ mermaid: true
   
 
 ## Protocol
-
+<hr>
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
 - 표준화 ( ISO,IEEE,IETF, ETSI(유럽표준), ITU, TTA …)
@@ -58,6 +58,7 @@ mermaid: true
 
 
 ## OSI 7 Layer
+<hr>
 - ISO(Internation Organization for Standardization)
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
@@ -159,6 +160,7 @@ mermaid: true
     - Star, mesh, bus…
 
 ## 예시로 알아보는 계층
+<hr>
 예시 1
 - User가 사용할 수 있는 장치(=단말기)
     - pc, smartphone

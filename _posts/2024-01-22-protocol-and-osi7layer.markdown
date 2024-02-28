@@ -15,8 +15,10 @@ mermaid: true
 
 ## CBN vs PBN
 <hr>
+
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" alt="CBN" width = "70%" height = "70%">
+
 - CBN(circuit-based network)
-    
     
     - 전화망 (PSTN)
     - connection-oriented service

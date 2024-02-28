@@ -16,7 +16,7 @@ mermaid: true
 ## CBN vs PBN
 
 - CBN(circuit-based network)
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" width="100%" height="70%">
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" width="50%" height="50%">
     
     - 전화망 (PSTN)
     - connection-oriented service
@@ -30,7 +30,7 @@ mermaid: true
 
 - PBN(Packet-based network)
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" width="100%" height="70%">
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" width="50%" height="50%">
     
     - Internet
     - connection-less service
@@ -46,7 +46,7 @@ mermaid: true
   
 
 ## Protocol
-<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" width="100%" height="100%">
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" width="50%" height="50%">
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
 - 표준화 ( ISO,IEEE,IETF, ETSI(유럽표준), ITU, TTA …)
@@ -62,7 +62,7 @@ mermaid: true
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
 
-<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" width="100%" height="100%">
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" width="50%" height="50%">
 
 ### 7계층 : Application(응용) Layer
 
@@ -116,7 +116,7 @@ mermaid: true
     - routing(forwarding)
     - forwarding table (최종 결과물)
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" width="100%" height="100%">    
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" width="50%" height="50%">    
 
 ### 2계층 : Data-link(데이터 링크) Layer
 
@@ -127,7 +127,7 @@ mermaid: true
     - TDMA(Time Division Multiple Access), CDMA
 - MAC(Medium Access Control) //단일성, 유일성
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" width="100%" height="100%"> 
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" width="50%" height="50%"> 
     
     - Mac address
     - 고유한 하드웨어 주소

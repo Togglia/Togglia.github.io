@@ -1,6 +1,6 @@
 ---
 title: Protocol and OSI7Layer
-author: Togglia
+author: KHS
 date: 2022-01-22 11:33:00 +0800
 categories: [무선통신망공학, 1주차]
 tags: [Network]
@@ -9,14 +9,14 @@ math: true
 mermaid: true
  
 ---
-# Network
+## Network
 <hr>
 통신분야에서 단말기 등을 접속하기 위해 사용되는 단말기기, 선로 및 교환기 등으로 구성되는 전송매체 
 
 ## CBN vs PBN
 
 - CBN(circuit-based network)
-    ![alt text](https://github.com/Togglia/Togglia.github.io/tree/main/_posts/image/CBN1.png)
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" width="100%" height="70%">
     
     - 전화망 (PSTN)
     - connection-oriented service
@@ -30,7 +30,7 @@ mermaid: true
 
 - PBN(Packet-based network)
     
-    ![alt text](./image/PBN.png)
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" width="100%" height="70%">
     
     - Internet
     - connection-less service
@@ -46,7 +46,7 @@ mermaid: true
   
 
 ## Protocol
-![alt text](<image/IP protocol.png>)
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" width="100%" height="100%">
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
 - 표준화 ( ISO,IEEE,IETF, ETSI(유럽표준), ITU, TTA …)
@@ -57,12 +57,12 @@ mermaid: true
     - timing → 동기식, 비동기식
 
 
-# OSI 7 Layer
+## OSI 7 Layer
 - ISO(Internation Organization for Standardization)
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
 
-![alt text](image/OSI7LAYER.png)
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" width="100%" height="100%">
 
 ### 7계층 : Application(응용) Layer
 
@@ -116,8 +116,7 @@ mermaid: true
     - routing(forwarding)
     - forwarding table (최종 결과물)
     
-    ![alt text](image/Port_forwading.png)
-    
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" width="100%" height="100%">    
 
 ### 2계층 : Data-link(데이터 링크) Layer
 
@@ -128,7 +127,7 @@ mermaid: true
     - TDMA(Time Division Multiple Access), CDMA
 - MAC(Medium Access Control) //단일성, 유일성
     
-    ![alt text](image/Untitled.png)
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" width="100%" height="100%"> 
     
     - Mac address
     - 고유한 하드웨어 주소
@@ -160,7 +159,7 @@ mermaid: true
     - Star, mesh, bus…
 
 ## 예시로 알아보는 계층
-예시 1) 
+예시 1
 - User가 사용할 수 있는 장치(=단말기)
     - pc, smartphone
 - kakao talk 다운로드->설치(L6, L4)->실행(L7)
@@ -171,11 +170,13 @@ mermaid: true
 - 스마트폰을 구입하고, 통신사에 가입하고(개통)
     - L3
 - 스마트폰 제조사
-    - L2, L1
+    - L2,L1
+
 ---
-예시 2) 
+
+예시 2 
 - 카카오톡 실행(L7)-->철수를 주소록에서 찾고 철수(L5)와의
-    
+
     대화창을 실행(L4)
     
 - “안녕하세요” 입력->전송

@@ -30,7 +30,7 @@ mermaid: true
 
 - PBN(Packet-based network)
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" width="50%" height="50%">
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" alt="PBN" width="50%" height="50%">
     
     - Internet
     - connection-less service
@@ -46,7 +46,7 @@ mermaid: true
   
 
 ## Protocol
-<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" alt="IP protocol" width="50%" height="50%">
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
 - 표준화 ( ISO,IEEE,IETF, ETSI(유럽표준), ITU, TTA …)
@@ -62,7 +62,7 @@ mermaid: true
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
 
-<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" alt="OSI7LAYER" width="50%" height="50%">
 
 ### 7계층 : Application(응용) Layer
 
@@ -127,7 +127,7 @@ mermaid: true
     - TDMA(Time Division Multiple Access), CDMA
 - MAC(Medium Access Control) //단일성, 유일성
     
-    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" width="50%" height="50%"> 
+    <img src="https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" alt="Untitled" width="50%" height="50%"> 
     
     - Mac address
     - 고유한 하드웨어 주소

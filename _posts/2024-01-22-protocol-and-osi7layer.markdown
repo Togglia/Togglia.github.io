@@ -1,7 +1,7 @@
 ---
 title: Protocol and OSI7Layer
 author: KHS
-date: 2022-01-22 11:33:00 +0800
+date: 2024-01-22 11:33:00 +0800
 categories: [무선통신망공학, 1주차]
 tags: [Network]
 pin: true

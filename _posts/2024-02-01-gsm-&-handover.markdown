@@ -1,7 +1,7 @@
 ---
 title: GSM & Handover
 author: KHS
-date: 2022-02-01 12:00:00 +0800
+date: 2024-02-01 12:00:00 +0800
 categories: [무선통신망공학, 2주차]
 tags: [Network]
 pin: true

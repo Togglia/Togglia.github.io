@@ -1,0 +1,177 @@
+---
+title: CDMA
+author: khs
+date: 2024-02-03 12:00:00 +0800
+categories: [무선통신망공학, 3주차]
+tags: [Network]
+pin: true
+math: true
+mermaid: true
+ 
+---
+# CDMA
+
+<hr>
+
+CDMA 방식을 사용하여 어떻게 handover를 사용하는지 
+
+- IS-95
+- CDMA
+- handover
+
+## IS-95
+
+<hr>
+
+- Multiple Access: CDMA(Code Division Multiple Access)
+- 표준 기관: ANSI TIA-EIA-95(1993년)
+- 한국과 미국 주축
+- Peak data rate: 9600bps
+- 주요 서비스: 음성, 문자
+- 국내상용화시기: 1996년
+
+
+
+# CDMA
+
+<hr>
+
+## CDMA 도입배경
+
+<hr>
+
+- 선진국을 위한 기술기반(기술도입전략) 마련
+    - 고급 연구 인력 양성
+    - 시장경쟁력 창출
+- 1세대 이동통신 가입자 증가
+    - 전세계적으로 매년 40% 이상 증가
+        - 주파수 고갈, 통화 품질 저하, 수용 용량 포화
+    - 아날로그 → 디지털화
+        - 유럽진영 TDMA
+- CDMA
+    - 1990년 초 군용 및 위성 통신에 응용되던 대역 확산 원리를 Qualcomm이 CDMA 방식 이동전화로 발전 시킴
+    - IS-95 계열 표준화 성공
+    - 아날로글 대비 10배 이상 용량, TDMA 대비 3배 이상 용량
+        - **주파수 이용 효율 면에서 유리**
+- 국내 CDMA 선택 이유
+    - CDMA 방식은 상용화에 성공할 경우 기술 자립 가능
+        - 이미 상용화된 TDMA방식을 채택할 경우 위험 부담이 적으나 기술 종속이 쉬움
+    - 간단한 주파수 계획 가능
+        - 아날로그 대비 10배 이상 용량, TDMA대비 3배 이상 용량
+    - TDMA방식 대비 기지국 수가 적어 시스템의 설치 및 운용 비용이 저렴
+    - 단말기 소모 전력이 적음
+        - 배터리 교체 주기가 길어짐 → 사용자 편의성 증대
+    - 기타 무선 통신에 적합
+        - 이동 전화 뿐만 아니라 차세대 개인 휴대 통신, 무선 LAN, 무선 데이터 통신 등에 적합.
+- 연도별 주요 이슈
+    - 1989년 미국의 퀄컴사에서 CDMA 통화 시험 성공
+    - 1991년 퀄컴사에서 CDMA 시스템을 공식적으로 제안
+    - 1993년 국내 정보통신부에서 공식적으로 CDMA를 이동 통신 방식으로 선정
+    - 1996년 세계 최초로 국내에서 상용화 성공
+
+## CDMA 개요
+
+<hr>
+
+### 다중접속 방식
+
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/다중접속방식.png" alt="다중접속방식" width = "100%" height = "70%">
+
+### FDMA(Frequency Division Multiple Access)
+
+- 하나의 채널에 하나의 주파수 필요
+- 주파수를 다르게 쓰고 출력은 똑같다.
+- 문제 → 사용할 수 있는 주파수가 유한, 간섭 문제
+- 해결 → 가드밴드를 사용하지만 비효율적
+
+### TDMA (Time Division Multiple Access)
+
+- 하나의 주파수를 통해 각각 다른 time slot을 이용 여러 개의 통화 채널 구성
+- 시간을 나누어서
+
+### CDMA (Code Division Multiple Access)
+
+- 각기 다른 코드를 사용하는 여러 명의 사용자가 하나의 주파수를 통해 접속. 즉, 하나의 물리 채널 내에 여러 개의 논리적인 채널이 존재
+- 코드 X bit = 데이터 → A가 전송한 데이터를 알기 위해서는 코드를 알아야 한다 → **기밀성**
+
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/다중접속방식_표.png" alt="다중접속방식_표" width = "100%" height = "70%">
+
+### 장단점
+
+- 장점
+    - 아날로그 통신에 비해 용량이 증대
+    - 통화 품질 우수
+        - Soft Handoff 수행
+        - 다양한 Diversity 기술의 적용
+    - 통화 비밀 보장 가능
+    - 단말기 소비 전력 최소
+        - Power Control 수행
+        - Slot Cycle Index
+    - 단말기 위치 파악 가능
+    - 주파수 재사용 계획이 단순
+- 단점
+    - 시스템의 구조가 복잡
+    - 기지국 동기에 미국의 GPS 위성을 이용
+    - 기지국 Engineering 및 최적화 작업이 복잡
+
+### CDMA 시스템
+
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/CDMA시스템.png" alt="CDMA시스템" width = "100%" height = "70%">
+
+- 전력제어
+    - 기지국 통화 용량의 최대화
+    - 이동국 배터리 수명 연장
+    - 균일한 통화 품질 유지
+    
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/전력비교.png" alt="전력비교" width = "100%" height = "70%">
+    
+    단말기 B에 대해서는 더 많은 전력 소모, 단 TDMA 방식 보다는 적다.
+
+
+# Handover
+
+<hr>
+
+## Hard handover
+
+<hr>
+
+- Hard handover가 일어나는 3가지
+    - 이동국이 다른 교환국에 속해 있는 기지국으로 이동할 경우
+    - 다른 주파수 채널로 통화 채널을 변경할 경우
+    - 서로 다른 프레임 옵셋을 가지는 통화 채널을 변경할 경우
+
+## Soft handover(CDMA)
+
+<hr>
+
+- 동일 주파수, 동일 프레임 옵셋, 동일 교환기에 속해 있는 기지국 또는 섹터 간에 핸드 오프를 할 경우
+- 기존의 통화로를 그대로 유지하면서 새로운 통화로를 지원하는 방식
+- CDMA의 레이크 수신 기능을 이용 : 서로 시간 차가 있는 두 신호를 분리해 낼 수 있는 기능
+    
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/SoftHandover.png" alt="SoftHandover" width = "100%" height = "70%">
+    
+
+- 동일 기지국의 섹터 간 소프트 핸드오버
+- 한 셀내의 두개의 섹터와 동시에 통화하는 경우
+    - 일반적으로 도심의 기지국은 3섹터로 구성
+        
+        <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/Handover_Area.png" alt="Handover_Area" width = "100%" height = "70%">
+        
+
+## handover management procedure in GSM
+
+<hr>
+
+- 핸드오버 조건
+    - power lever in handset is too slow
+    - signal/noise ratio is too low → 신호대잡음 SNR
+    - bit-error-rate is too high
+        
+        <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/Handover_Management.png" alt="Handover_Management" width = "100%" height = "70%">
+        
+    ## Hard vs soft
+        
+    - hard : 중간에 끊고 새로 연결
+    - soft : 일단 새로 연결 → 약한거 out
+        - 끊임없는 서비스 제공

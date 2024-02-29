@@ -1,6 +1,6 @@
 ---
 title: Protocol and OSI7Layer
-author: KHS
+author: khs
 date: 2024-01-22 11:33:00 +0800
 categories: [무선통신망공학, 1주차]
 tags: [Network]
@@ -18,7 +18,7 @@ mermaid: true
 
 
 - CBN(circuit-based network)
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/CBN1.png" alt="CBN" width = "70%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/CBN1.png" alt="CBN" width = "70%" height = "70%">
 
     - 전화망 (PSTN)
     - connection-oriented service
@@ -31,7 +31,7 @@ mermaid: true
     
 
 - PBN(Packet-based network)
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/PBN.png" alt="PBN" width = "70%" height = "70%">    
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/PBN.png" alt="PBN" width = "70%" height = "70%">    
     
     - Internet
     - connection-less service
@@ -48,7 +48,7 @@ mermaid: true
 
 ## Protocol
 <hr>
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/IP protocol.png" alt="IP protocol" width = "70%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/IP protocol.png" alt="IP protocol" width = "70%" height = "70%">
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
 - 표준화 ( ISO,IEEE,IETF, ETSI(유럽표준), ITU, TTA …)
@@ -67,7 +67,7 @@ mermaid: true
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
 
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/OSI7LAYER.png" alt="OSI7LAYER" width = "100%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/OSI7LAYER.png" alt="OSI7LAYER" width = "100%" height = "70%">
 
 ### 7계층 : Application(응용) Layer
 
@@ -120,7 +120,7 @@ mermaid: true
 - 장비 : L3 Router
     - routing(forwarding)
     - forwarding table (최종 결과물)   
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Port_forwading.png" alt="Port_forwading" width = "100%" height = "70%">       
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/Port_forwading.png" alt="Port_forwading" width = "100%" height = "70%">       
 
 ### 2계층 : Data-link(데이터 링크) Layer
 
@@ -131,7 +131,7 @@ mermaid: true
     - TDMA(Time Division Multiple Access), CDMA
 - MAC(Medium Access Control) //단일성, 유일성
     
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" alt="Untitled" width = "100%" height = "70%">    
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/Untitled.png" alt="Untitled" width = "100%" height = "70%">    
     
     - Mac address
     - 고유한 하드웨어 주소
@@ -166,7 +166,7 @@ mermaid: true
 
 <hr>
 
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220122/Untitled.png" alt="Untitled" width = "100%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/Untitled.png" alt="Untitled" width = "100%" height = "70%">
 
 예시 1
 - User가 사용할 수 있는 장치(=단말기)

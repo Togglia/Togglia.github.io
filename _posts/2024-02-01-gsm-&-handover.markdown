@@ -1,6 +1,6 @@
 ---
 title: GSM & Handover
-author: KHS
+author: khs
 date: 2024-02-01 12:00:00 +0800
 categories: [무선통신망공학, 2주차]
 tags: [Network]
@@ -21,20 +21,20 @@ mermaid: true
     - 한정된 주파수 자원을 재사용
     - 주파수 재사용을 통한 많은 가입자 서비스 가능(용량의 증대)
     
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/Cellular.png" alt="Cellular" width = "100%" height = "70%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/Cellular.png" alt="Cellular" width = "100%" height = "70%">
     
 
 ## 이동통신 네트워크
 
 <hr>
 
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/이동통신네트워크.png" alt="이동통신네트워크" width = "70%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/이동통신네트워크.png" alt="이동통신네트워크" width = "70%" height = "70%">
 
 ## 세대별 이동통신시스템 비교
 
 <hr>
 
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/세대별이동통신시스템비교.png" alt="세대별이동통신시스템비교" width = "100%" height = "70%">
+<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/세대별이동통신시스템비교.png" alt="세대별이동통신시스템비교" width = "100%" height = "70%">
 
 다중접속방식 
 
@@ -70,12 +70,12 @@ FDMA, TDMA, CDMA → 각각 handover 방법이 다름
 - 비 연속적 파형
 - 0과 1
 
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/Digital_signal.png" alt="Digital_signal" width = "50%" height = "50%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/Digital_signal.png" alt="Digital_signal" width = "50%" height = "50%">
     
 
 - 왜곡에 강함
 
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/recovering.png" alt="recovering" width = "100%" height = "50%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/recovering.png" alt="recovering" width = "100%" height = "50%">
     
 
 
@@ -110,7 +110,7 @@ FDMA, TDMA, CDMA → 각각 handover 방법이 다름
         - 다양한 통신 서비스 및 시설을 통합하여 제공하는 데 중요한 역할
 - GSM 네트워크 구조
     
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/GSM Network.png" alt="GSM Network" width = "100%" height = "50%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/GSM Network.png" alt="GSM Network" width = "100%" height = "50%">
     
     
 ## MS(Moblie Station)
@@ -183,7 +183,7 @@ FDMA, TDMA, CDMA → 각각 handover 방법이 다름
 - Inter BSC, Intra MSC handover
 - Inter MSC handover
     
-    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20220201/Handover.png" alt="Handover" width = "100%" height = "50%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240201/Handover.png" alt="Handover" width = "100%" height = "50%">
     
     하나의 BSC는 여러개의 BTS를 관리할 수있다.
     

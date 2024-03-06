@@ -1,0 +1,82 @@
+---
+title: Mobile IPv6
+author: KHS
+date: 2024-02-07 18:00:00 +0800
+categories: [무선통신망공학, 6주차]
+tags: [Network]
+pin: true
+math: true
+mermaid: true
+ 
+---
+
+## Content
+
+<hr>
+
+> - Mobile IPv4 
+> - Mobile IPv6
+
+<br>
+
+#  <span style="color:gray "> Mobile IPv6
+
+<hr>
+
+## 모바일 IPv6의 특징
+
+<hr>
+
+* Mobile IPv4 단점 보완
+    - Triangle routing, Ingress Filtering, Double crossing
+* 이동 단말의 증가로 인한 IP 주소 고갈
+    - IPv4 32비트 -> IPv6 128비트 주소체계 사용
+* 주요 제공 기능
+    - **주소 자동 설정 기능(Address Auto-configuration)**
+        - CoA 획득: 현재 위치한 망의 프리픽스 정보를 가짐
+    - **이웃 발견(Neighbor Discovery)**
+    - **경로 최적화(Route Optimization)**: CN이 MN에 직접 전송
+    - Mobile IPv4의 3가지 문제 해결
+        - Triangle Routing, Ingress Filtering, Double crossing
+
+* 새 옵션 및 메시지(destination option)
+    - 목적: 이동 노드의 바인딩 정보를 동적으로 알아내고 저장하기 위해 사용합니다.
+        - **Binding Update(BU):** 이동 노드가 홈 에이전트와 CN에게 자신의 COA를 알리기 위해 사용합니다.
+        - **Binding Acknowledgement(BA):** HA는 이동 노드에게 BU에 대한 응답으로 BA를 전송합니다
+        - **Binding Request(BR):** CN은 이동 노드는 바인딩 정보의 lifetime이 종료하기 전에 새로운 BU를 받아야 하는데, 활발히 데이터를 주고 받는 CN이 타이머가 거의 종료하려 할 때까지 이동 노드로부터 BU를 받지 못한 경우에 이동 노드로 BR을 보내 BU를 요구합니다.
+
+    - 목적: IPv6 노드는 터널링을 사용하지 않으면서 TCP 연결과 같은 상위 계층 연결을 유지하기 위해 사용 
+        - **Home Address Option:** 이동하는 노드는 CN과 통신할 때 데이터그램의 근원지 주소로 자신의 COA를 사용하고 Home Address 옵션에 자신의 홈 주소를 넣어서 전송합니다.
+        - 이를 수신한 CN은 근원지 주소와 Home Address 옵션 내의 주소를 교체합니다.
+        - TCP 연결과 같이 address와 port pair로 connection을 구별하는 상위 계층의 연결을 유지
+        - ingress filtering 해결
+        - Triangle routing 해결
+    
+  - 목적: IPv6에서 이동 노드가 외부 망으로 이동해 있는 동안 홈 망이 재구성되어 홈 에이전트가 바뀌는 경우, 이동 노드가 동적으로 홈 에이전트 주소를 알아내기 위해 사용하는 두 개의ICMPv6 메시지를 정의
+
+       - **Home Agent Address Discovery Request:** 이동 노드가 Mobile IPv6 Home-Agents anycast 주소를 목적지 주소로 설정하여 이 ICMP 메시지를 전송하면, 홈 망에서 홈 에이전트 기능을 수행하는 라우터 중 하나가 수신
+
+      - **Home Agent Address Discovery Reply:** Home Agent Address Discovery Request를 받은 홈 에이전트는 Home Agent Address Discovery Reply 메시지에 홈 망에서 홈 에이전트 역할을 수행하는 모든 라우터들의 정보를 담아 응답
+    
+  ![](https://velog.velcdn.com/images/keviness0720/post/10e66d9a-3768-4ebc-9864-d212e5d1075e/image.png)
+
+- IPv6도 최초 1번은 Triangle Routing 해야하고 그 이후에는 직접 통신
+
+<br>
+
+## Smooth Handoff
+
+* MN이 A 망에서 B 망으로 이동하여 서비스를 받던 도중 임의의 C 망으로 이동
+* CN은 이동 노드가 아직 B에 있는 것으로 인식하기 때문에 패킷을 B 망으로 전송
+* 이 때, B 망의 한 에이전트가 이 패킷들을 이동 노드까지 전송해 주어 패킷 손실을 줄이는 것
+    - FA가 없기 때문에 생기는 문제
+* 해결 방법
+    - 망 B의 라우터로 BU를 전송하여 그 라우터가 이동 노드의 이전 COA에 대한 임시 홈 에이전트 역할을 수행하도록 함
+
+  ![](https://velog.velcdn.com/images/keviness0720/post/e77ce0da-3842-4c1b-8d74-b54b23cf9539/image.png)
+
+
+<br>
+
+참고자료
+> Mobile IPv6 개발 동향 (itfind.or.kr)

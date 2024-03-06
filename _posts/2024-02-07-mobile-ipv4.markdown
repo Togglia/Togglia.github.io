@@ -1,0 +1,292 @@
+---
+title: Mobile IPv4
+author: khs
+date: 2024-02-07 12:00:00 +0800
+categories: [무선통신망공학, 6주차]
+tags: [Network]
+pin: true
+math: true
+mermaid: true
+ 
+---
+
+## Content
+
+<hr>
+
+> - Mobile IPv4 
+> - Mobile IPv6
+
+<br>
+
+## Mobile IPv4 등장 배경
+
+<hr>
+
+### 1. 고정된 위치에서 사용하는 인터넷의 단점
+
+  * 시간, 장소에 따른 제약
+  * 협소한 서비스 범위 및 종류
+  * 인터넷의 풍부한 정보 활용 저해
+
+### 2. Mobility 지원 IP 단말의 출현과 무선 통신 기술 등장(WLAN, WiMax)
+
+  - 단말이 이동성에 대한 사용자 요구 증가
+  - PDA, 노트북, 핸드폰 등 모바일 시스템의 IP 프로토콜 적용
+
+### 3. 기존 IP 네트워크의 한계
+
+  - 기존 TCP/IP 프로토콜(IPv4)의 Mobility에서 요구되는 패킷 라우팅과 Soft handoff 지원의 어려움
+    - 모바일 노드(mobile node)의 이동 시 접속점(point of attachment)이 변경될 때 마다 IP 주소가 변경됨
+      - 이동 후에도 패킷을 변경된 주소로 라우팅하여 일관되게 전송하는 방법 필요
+    - 이동 시 세션 연결 유지가 안됨
+      - 기존 연결된 TCP 세션 연결을 계속 유지하기 위해서는 모바일 노드는 동일한 IP 주소의 유지가 필요
+
+<br>
+
+# <span style="color:gray "> Mobile IPv4
+
+<hr>
+
+## 1. 개요
+
+<hr>
+
+Mobile IPv4은 이동성을 지원하기 위해 개발된 프로토콜로, IETF RFC 3344 및 RFC 4721에 기반하여 정의되었다.
+
+<br>
+
+## 2. 주요 특징
+
+<hr>
+
+  - 호환성(Compatibility): IP와 같은 네트워크 계층에서 지원되며, 기존 시스템 및 라우터와 호환 가능하다.
+  - 투명성(Transparency): 모바일 단말을 IP 주소로 관리하며, 연결이 중단된 후에도 재연결 시 계속 통신할 수 있다. 또한 고정 네트워크로의 연결 접속점을 변경할 수 있다.
+  - 효율성 및 확장성(Efficiency and scalability): 무선 연결되는 모바일 시스템에 추가되는 메시지를 최소화하고 다양한 모바일 시스템을 지원한다.
+  - 보안(Security): 모든 등록 관련 메시지에 대해 인증을 제공한다.
+
+<br>
+
+## 3. 구성요소
+
+<hr>
+
+Mobile IPv4에는 다음과 같은 주요 구성요소가 있다.
+
+### MN(Mobile Node)
+
+네트워크 간 이동이 가능한 사용자 단말로, HA(Home Address)와 COA(Care Of Address)를 가진다.
+
+### HA(Home Agent)
+
+MN이 소속된 홈 네트워크의 시스템으로, MN의 위치를 관리하고 IP 주소를 할당합니다. 또한 HA와 COA 간의 패킷 전달을 담당한다.
+
+* MN의 위치 관리 -> IP address를 관리한다.
+  - Binding : Home Address <-> CoA  -> 2개를 binding해서 관리한다.
+* 패킷 전달 
+  - Tunneling : HA <-> COA
+
+### FA(Foreign Agent)
+
+MN이 방문하여 연결된 외부 네트워크의 시스템으로, MN의 통신을 지원하고 HA와 터널링을 통해 MN의 등록 및 데이터 전송을 처리한다.
+
+### Home Address
+
+MN이 HA로부터 할당받은 고정 IP 주소로, MN의 현 위치에 관계 없이 고정됩니다. FA는 해당 MN의 홈 네트워크를 판별한다.
+
+### CoA(Care Of Address)
+
+모바일 노드의 외부 네트워크 방문 시 외부 에이전트로부터 할당받은 임시 IP 주소로, 이 주소는 FA CoA 또는 별도의 IP 주소로 할당될 수 있습니다.
+
+* 할당방법
+
+  - 외부 에이전트 (FA) 자신의 주소 (FA CoA)
+  - 별도의 IP 주소를 할당 (Co-located CoA) : DHCP 등에 이용한다.
+
+* 모바일 노드는 CoA 주소를 홈 에이전트에 등록MN은 CoA 주소를 HA에 등록한다.
+
+  - 등록정보: Lifetime, Home address, CoA
+
+### CN(Correspondent Node)
+
+MN과 통신하는 노드이다.
+
+<br>
+
+## Mobile IPv4 동작 과정
+
+<hr>
+
+### 1. 모든 Mobile IP 제어 메시지는 IP+UDP 프로토콜로 전송
+   - Port number: 434 (이 포트를 사용하여 아래 작업을 수행)
+
+### 2. 모바일 노드 이동 및 외부 네트워크 간 핸드오프 과정
+   - 네트워크 발견 : 현재 위치 확인
+   - Care Of Address(CoA) 획득: 외부 에이전트로부터 CoA 할당
+   - 등록 : 할당받은 CoA를 홈 에이전트에 등록
+   - 데이터 전송
+
+### 3. 현재 위치 파악
+   * 에이전트 광고(Agent Advertisement)
+     - 라우터에 의해 방송됨
+     - ICMP : 라우터 광고(Router Advertisement)
+   * 에이전트 요청(Agent Solicitation)
+     - 호스트들이 디폴트 라우터 정보 요청
+     - ICMP: 라우터 요청(Router Solicitation)
+
+### 4. 모바일 노드의 등록 절차
+   1. 모바일 노드의 이동 감지
+   2. 수신한 에이전트 광고(Advertisement) 분석: 외부 네트워크 이동 감지
+   3. 외부 에이전트로부터 CoA 획득
+   4. 외부 에이전트에 등록 (FA CoA)
+   5. 홈 에이전트에 위치 및 CoA 등록
+   6. 등록 확인
+
+   ![Mobile IPv4 Registration Process](https://velog.velcdn.com/images/keviness0720/post/3fc653f6-5231-4db0-b93e-b8a9cb15f135/image.png)
+
+### 이동 감지 알고리즘
+  - 네트워크 간 이동 감지
+    - Agent Advertisement 메시지의 유효기간 (Life Time) 필드 이용
+      - 유효기간 초과 때까지 동일한 에이전트로부터 에이전트 광고 메시지를 수신하지 못하면 에이전트를 잃어 버린 것으로 간주
+      - 다른 에이전트로부터 수신한 에이전트 광고 메시지의 유효기간이 초과되지 않았다면, 모바일 노드는 즉시 새로운 에이전트로 등록 시도
+    - Agent Advertisement 메시지의 주소 Prefix 이용
+      - 모바일 노드는 수신한 에이전트 광고 메시지가 현재 사용하고 있는 CoA와 동일한 네트워크인지를 프리픽스 길이를 이용하여 검사
+      - 다르다면 이동한 것으로 간주
+  - 외부 네트워크-> 홈 네트워크
+    - 에이전트 광고 메시지 통해 홈 네트워크 감지
+    - 모바일 노드는 라우팅 테이블 변경
+    - 홈 에이전트에 저장되어 있는 CoA 등록 정보 해지
+  
+### CoA 획득 (1/2)
+
+- 외부 에이전트 광고 메시지 수신
+- 다른 네트워크로 이동 감지
+- CoA를 획득하는 과정 수행
+  - 외부 에이전트 광고 메시지로부터 유추 (자체 구성)
+    - IPv6: 네트워크 접두사 + MAC 주소
+  - DHCP(Dynamic Host Configuration Protocol)
+
+### CoA 획득 (2/2)
+
+- CoA 할당 방식
+  - 외부 에이전트 (FA) CoA
+    - 외부 에이전트 주소를 그대로 CoA로 사용
+    - 외부 에이전트 구현 용이
+    - 홈 에이전트와 외부 에이전트 사이에 설정된 터널을 통해서만 모바일 노드와 관련된 데이터가 전달 -> 여기서 Mobile IP의 문제점 발생
+      - 전달 지연 발생 -> 문제1
+  - Co-located CoA
+    - 모바일 노드에게 유일한 주소 할당
+    - 외부 에이전트를 거치지 않고 패킷이 직접 전달
+    - 외부 에이전트는 모든 모바일 노드에게 주소를 할당하고 관리
+    
+### 외부 에이전트 CoA 방식의 데이터 전송 경로
+
+- 상대 노드로부터 전송되는 패킷은 홈 에이전트와 외부 에이전트를 거쳐 모바일 노드에게 전송
+  - **Triangle routing problem**: 항상 홈 에이전트를 거쳐서 상대 노드에 가야하기 때문에 지연 발생
+- 모바일 노드에서 전송되는 패킷은 상대 노드에게 직접 전송
+
+  ![외부 에이전트 CoA 방식의 데이터 전송 경로](https://velog.velcdn.com/images/keviness0720/post/dfa7edca-9e9d-4506-a04e-d10b59ec1ecb/image.png)
+
+### 등록 절차
+
+- 모바일 노드는 할당 받은 CoA를 홈 에이전트에게 등록
+- 등록 절차
+  - 등록 요청(Registration Request) 메시지
+    - MN -> HA
+  - 등록 응답(Registration Reply) 메시지
+    - HA/FA -> MN
+
+### 외부 에이전트 CoA를 이용한 등록 절차
+
+- 모바일 노드는 외부 에이전트를 거쳐 홈 에이전트와 등록 요청/응답 과정 수행
+  ![외부 에이전트 CoA를 이용한 등록 절차](https://velog.velcdn.com/images/keviness0720/post/edadd949-402b-4db5-b00f-d16d420a1e67/image.png)
+
+### Co-located CoA를 이용한 등록 절차
+
+- 모바일 노드는 외부 에이전트와 상관없이 홈 에이전트와 직접 등록 요청/응답 과정을 수행
+  ![Co-located CoA를 이용한 등록 절차](https://velog.velcdn.com/images/keviness0720/post/f5c92a56-5b0f-47c7-b630-a4521e75b90d/image.png)
+
+
+### 등록 요청 (Registration Request) 메시지 (1/2)
+
+- 모바일 노드가 홈 에이전트에게 현재 위치를 통지합니다.
+- 메시지를 수신한 홈 에이전트는 바인딩 정보를 생성하거나 갱신합니다.
+- 등록 요청 메시지 송신 상황:
+  - 모바일 노드가 외부 네트워크에서 CoA를 할당 받고 이를 등록할 때
+  - 모바일 노드가 외부 네트워크에서 다른 외부 네트워크로 핸드오프될 때
+  - 메시지 유효기간이 종료되기 직전에 재등록 시
+  - 모바일 노드가 홈 네트워크로 복귀한 경우 기존의 바인딩 정보 삭제 요청 시
+
+### 등록 요청 (Registration Request) 메시지 (2/2)
+
+- S(Simultaneous Bindings): MN은 HA에 이전 정보를 유지할 것을 요청합니다.
+- B(Broadcast Datagrams): HA에게 broadcast 형태의 데이터그램도 터널링을 요청합니다.
+- D (Decapsulation by MN): MN이 co-located CoA를 사용함을 알립니다.
+- M (Minimal Encapsulation)
+- 식별자 (Identification): 64비트 숫자로, 등록 응답 메시지에서 동일하게 사용됩니다. 이는 재생 공격을 방지합니다.
+  
+  ![등록 요청 메시지](https://velog.velcdn.com/images/keviness0720/post/b8698462-25cf-4b24-9ee7-c86a163d08f5/image.png)
+
+
+### 등록 응답 (Registration Replay) 메시지
+
+- 등록 절차를 마친 모바일 노드는 해당 외부 네트워크의 디폴트 라우터를 선택합니다.
+  - 외부 에이전트 CoA를 사용하여 등록한 경우:
+    - 라우터 광고 메시지를 전송하는 라우터를 디폴트 라우터로 선택합니다.
+  - Co-located CoA 방식을 사용하는 경우:
+    - ICMP 라우터 광고 메시지에서 디폴트 라우터를 선택합니다.
+    - 모바일 노드가 할당 받은 CoA의 네트워크 프리픽스가 에이전트 광고 메시지의 송신지 주소와 일치한다면, 모바일 노드는 에이전트를 디폴트 라우터로 사용할 수 있습니다.
+- 홈 에이전트가 모바일 노드의 등록 요청을 수락하거나 거부합니다.
+- 외부 에이전트가 등록 응답 메시지를 전송하는 경우:
+  - 정책상 방문한 모바일 노드를 거부합니다.
+  - 관리 가능한 모바일 노드의 수를 초과한 경우입니다.
+  
+### Co-located CoA 방식에서의 전송 경로
+
+  - 터널링의 양단은 홈 에이전트와 모바일 노드입니다.
+  - 모바일 노드의 CoA가 라우팅 가능한 주소이므로 터널링의 한쪽 끝이 될 수 있습니다.
+  - 이때 데이터는 외부 에이전트를 거치지 않습니다.
+
+    ![Co-located CoA 방식에서의 전송 경로](https://velog.velcdn.com/images/keviness0720/post/756b206b-462a-4971-b5d6-31aa7385d046/image.png)
+
+### 터널링
+
+  - 모바일 IP의 기본적인 캡슐화 기술입니다.
+  - IP-in-IP: IP 패킷을 또 다른 IP 패킷으로 캡슐화합니다.
+  - 보안
+
+    ![터널링](https://velog.velcdn.com/images/keviness0720/post/3a1e9985-9ac4-42ac-9b58-b5ab77796e81/image.png)
+
+<br>
+
+## Mobile IPv4 문제점 (3가지)
+
+<hr>
+
+### Triangle Routing
+  - CN에서 MN으로 데이터 전송시 HA를 거치기 때문에 발생하는 문제
+  - Latency가 증가함
+  - 해결 방법: Mobile IPv6
+
+    ![Triangle Routing](https://velog.velcdn.com/images/keviness0720/post/e6010b28-29b9-4837-ad13-92c65d766ac4/image.png)
+
+
+### Ingress Filtering
+  - 보안상의 이유로 라우터에 ingress filtering 정책이 수행되어 있는 경우
+  - FA는 합당하지 않은 발신지 주소를 가진 패킷을 차단함
+  - 해결 방법: Reverse Tunneling, Mobile IPv6
+    - Mobile IPv4에서 ingress filtering을 수행하는 라우터를 통과하기 위해 이동 노드는 CoA(Care of Address)를 발신지 주소로 하여 역터널링된 패킷을 생성하여 전송
+
+  ![Ingress Filtering](https://velog.velcdn.com/images/keviness0720/post/81c88387-3ed3-469a-8b30-9880f3453aed/image.png)
+
+### Double Crossing
+- MN이 CN의 네트워크로 이동했을 때 발생
+- HA를 경유해야 하므로 불필요한 두 번의 인터넷 경유가 발생함
+- Triangle Routing이 원인으로 작용함
+- 트래픽 및 지연 증가
+- 해결 방법: Mobile IPv6
+
+<br>
+
+참고자료
+> Mobile IPv6 개발 동향 (itfind.or.kr)

@@ -9,7 +9,7 @@ math: true
 mermaid: true
  
 ---
-# 3세대 이동통신
+# **Content**
 
 <hr>
 
@@ -19,7 +19,9 @@ mermaid: true
 - WCDMA
 - UMTS
 
-## 3세대 이동통신 출현
+<br>
+
+## **3세대 이동통신 출현**
 
 <hr>
 
@@ -36,7 +38,9 @@ mermaid: true
         - 주파수 재사용 계획이 단순
         - 셀 배치 유연성
 
-## 이동통신 발전 → 통합 : IMT-2000
+<br>
+
+## **이동통신 발전 → 통합 : IMT-2000**
 
 <hr>
 
@@ -45,7 +49,9 @@ mermaid: true
 
 - WiMAX track : IEEE에서 IP기반으로 만들어진 우리나라에서는 wibro
 
-## W-CDMA vs CDMA2000
+<br>
+
+## **W-CDMA vs CDMA2000**
 
 <hr>
 
@@ -54,29 +60,35 @@ mermaid: true
 
 * W-CDMA : GSM 기반, 반응이 더 좋음
 * CDMA2000 : IS-95기반 , 미국 GPS 에 의존적
----
-## WCDMA
+<br>
+
+## **WCDMA**
 
 <hr>
 
 Wideband Code Division Multiple Access : 광대역 코드 분할 다중 접속
-### WCDMA = CDMA based + partially TDMA, FDMA
+
+### **WCDMA = CDMA based + partially TDMA, FDMA**
 * TDD(Time Division Duplex)
 * FDD(Frequency Division Duplex)
 	![WCDMA](https://velog.velcdn.com/images/keviness0720/post/4ea742cf-2d19-42ac-95c0-73faef5a6fc4/image.png)
----
-## WCDMA Network
+<br>
+
+## **WCDMA Network**
 
 <hr>
 
-### WCDMA network standard
-* Release 99, Release 4 -> 여기서 정의
-* UMTS(Universal Mobile Telecommunication System)
-* Proposed by 3GPP
-* Conceptual Architecture
-  ![WCDMA network standard](https://velog.velcdn.com/images/keviness0720/post/60fb5a24-812f-43a0-ba04-4b45f71da5b3/image.png)
----
-## UMTS Architecture
+### **WCDMA network standard**
+
+  * Release 99, Release 4 -> 여기서 정의
+  * UMTS(Universal Mobile Telecommunication System)
+  * Proposed by 3GPP
+  * Conceptual Architecture
+    ![WCDMA network standard](https://velog.velcdn.com/images/keviness0720/post/60fb5a24-812f-43a0-ba04-4b45f71da5b3/image.png)
+
+<br>
+
+## **UMTS Architecture**
 
 <hr>
 
@@ -84,122 +96,134 @@ Wideband Code Division Multiple Access : 광대역 코드 분할 다중 접속
 
 Uu : UE와 Node B의 연결은 Uu인터페이스로 연결
 
----
+<br>
 
-### UE(User Equipment)
-* ME + USIM
-* GSM의 UE와 같음
-* 구성
-  - ME(Mobile equipment)
-    - 단말
-  - USIM(Universal subscriber identity Module)
-    - 가입자 정보 인증    
----
-### UTRAN(UMTS Terrestrial Radio Access Network)
-* CN과 UE 연결
-* 전파 자원 제어, 할당
-* 사용자 이동성 보장 
-* 구성
-  - Node B
-    - Cell 안의 UE와 연결
-    - BTS in GSM
-  - RNC
-    - Node B 제어 및 통신 자원 할당 
-    - handover, RB(Radio Bearer) 담당
-  - RNS
-    - Radio Network subsystem
-    - Node Bs + RNC
-    - UE와 연결 상태에 따라 SRNS와 DRNS로 구분
-    - SRNS(Serving RNS): UE와 연결을 유지하고 있는 RNS
-    - DRNS(Drafting RNS) : UE가 RNC간 이동하는 상황에서 새롭게 UE와 연결되는 RNS
----
-### CN(core Network)
-* 상위 레벨의 데이터 처리
-* UTRAN을 거쳐 UE와 전화 통화 연결, 데이터 통신 연결 처리
-* 요금 과금 시스템 
-* 망 보안 관련 처리
-* 구성 
-  - MSC(Mobile Switching Center)
-    - 음성 정보 처리: 통화 제어, 단말기 이동성 확보 등
-  - VLR(Visitor Location Register)
-    - 사용자의 위치 정보 저장: 가입자 정보를 일시적으로 저장
-  - GMSC(Gateway Mobile Switching Center)
-    - 음성 정보 처리: PSTN과 무선 통신망 연결
-  - SGSN(Serving GPRS Support Node)
-    - packet 정보 처리: 자신의 영역안의 UE 감지 및 packet 송수신 제어
-  - GGSN(Gateway GPRS Support Node)
-    - Packet 정보 처리: Internet과 CN의 연결
-  - HLR(Home Location Register)
-    - 사용자의 위치 정보 저장: 단말기 인증, 등록
----
-### Domain
-* CS domain, PS domain, BS domain
-  - lu interface를 통해 RNC와 연결
-* CS(Circuit Switched) domain
-  - Dedicated Channel(송신자와 수신자가 1:1로 연결)을 할당하여 데이터 전송
-  - MM(Mobility Management)
-    - 단말과 기지국간 연결 전환
-  - CM(Connection Management)
-    - 통화 연결 제어
-  - CC(Call Control)
-    - CN과 연결 담당
-    - 통화 재연결
-    - 음성 통화 송수신 관리
-  - SMS(Short Message Service) -> 패킷이 아니고 음성채널에서 던지는것
-    - 핸드폰 문자 서비스
-    
-* PS(Packet Switched) domain
-  - User Data를 Packet 단위로 전송(Voice/Video data + Control Command)
-  - GMM(GPRS Mobility Management)Protocol, SM(session Management)protocol
-  ![PS domain](https://velog.velcdn.com/images/keviness0720/post/aea091fd-0354-4441-8fb7-d6829e528e34/image.png)
----
-## Protocol Architecture
+### **UE(User Equipment)**
 
-<hr>
+  * ME + USIM
+  * GSM의 UE와 같음
+  * 구성
+    - ME(Mobile equipment)
+      - 단말
+    - USIM(Universal subscriber identity Module)
+      - 가입자 정보 인증    
 
-### Control Plane
-* For Signaling
-* CS domain : SS7 based(in core network)
-* PS domain : IP based(in core network)
-* Radio access network : UTRAN protocols
-![Control Plane](https://velog.velcdn.com/images/keviness0720/post/91d79e94-ca91-4850-95bb-385247ca3897/image.png)
+<br>
 
+### **UTRAN(UMTS Terrestrial Radio Access Network)**
 
-### User Plane
-* For transport of user data // user측면에서 data를 전송할 때 사용하는 protocol
-![User Plane](https://velog.velcdn.com/images/keviness0720/post/c980e973-a093-4068-a375-6957917f13c6/image.png)
----
-## UMTS Handover
+  * CN과 UE 연결
+  * 전파 자원 제어, 할당
+  * 사용자 이동성 보장 
+  * 구성
+    - Node B
+      - Cell 안의 UE와 연결
+      - BTS in GSM
+    - RNC
+      - Node B 제어 및 통신 자원 할당 
+      - handover, RB(Radio Bearer) 담당
+    - RNS
+      - Radio Network subsystem
+      - Node Bs + RNC
+      - UE와 연결 상태에 따라 SRNS와 DRNS로 구분
+      - SRNS(Serving RNS): UE와 연결을 유지하고 있는 RNS
+      - DRNS(Drafting RNS) : UE가 RNC간 이동하는 상황에서 새롭게 UE와 연결되는 RNS
+
+<br>
+
+### **CN(core Network)**
+
+  * 상위 레벨의 데이터 처리
+  * UTRAN을 거쳐 UE와 전화 통화 연결, 데이터 통신 연결 처리
+  * 요금 과금 시스템 
+  * 망 보안 관련 처리
+  * 구성 
+    - MSC(Mobile Switching Center)
+      - 음성 정보 처리: 통화 제어, 단말기 이동성 확보 등
+    - VLR(Visitor Location Register)
+      - 사용자의 위치 정보 저장: 가입자 정보를 일시적으로 저장
+    - GMSC(Gateway Mobile Switching Center)
+      - 음성 정보 처리: PSTN과 무선 통신망 연결
+    - SGSN(Serving GPRS Support Node)
+      - packet 정보 처리: 자신의 영역안의 UE 감지 및 packet 송수신 제어
+    - GGSN(Gateway GPRS Support Node)
+      - Packet 정보 처리: Internet과 CN의 연결
+    - HLR(Home Location Register)
+      - 사용자의 위치 정보 저장: 단말기 인증, 등록
+
+<br>
+
+### **Domain**
+
+  * CS domain, PS domain, BS domain
+    - lu interface를 통해 RNC와 연결
+  * CS(Circuit Switched) domain
+    - Dedicated Channel(송신자와 수신자가 1:1로 연결)을 할당하여 데이터 전송
+    - MM(Mobility Management)
+      - 단말과 기지국간 연결 전환
+    - CM(Connection Management)
+      - 통화 연결 제어
+    - CC(Call Control)
+      - CN과 연결 담당
+      - 통화 재연결
+      - 음성 통화 송수신 관리
+    - SMS(Short Message Service) -> 패킷이 아니고 음성채널에서 던지는것
+      - 핸드폰 문자 서비스
+      
+  * PS(Packet Switched) domain
+    - User Data를 Packet 단위로 전송(Voice/Video data + Control Command)
+    - GMM(GPRS Mobility Management)Protocol, SM(session Management)protocol
+    ![PS domain](https://velog.velcdn.com/images/keviness0720/post/aea091fd-0354-4441-8fb7-d6829e528e34/image.png)
+
+<br>
+
+## **Protocol Architecture**
 
 <hr>
 
-* Hand handover
-  - This form of handover is essentially the same as that used for 2G networks
-where one link is broken and another established.
-* Soft handover
-  - This form of handover is a more gradual and the UE communicates
-simultaneously with more than one Node B or base station during the handover
-process.
-* Softer handover
-  - Not a full form of UMTS handover, but the UE communicates with more than one
-sector managed by the same NodeB.
-* Horizontal handover
-  - 동종망간 핸드오버 (ex.WCDMA -> WCDMA(사용자가 바뀌는 경우)
-* Vertical handover
-  - 이종망간 핸드오버 ( 4G -> 3G -> 4G // GSM -> WCDMA -> GSM)
-  - UMTS inter RAT handover
-    - This form of handover occurs when mobiles have to change between Radio Access Technologies, e.g. UMTS to / from GSM or UMTS to / from 4G LTE, etc
+### **Control Plane**
+  * For Signaling
+  * CS domain : SS7 based(in core network)
+  * PS domain : IP based(in core network)
+  * Radio access network : UTRAN protocols
+  ![Control Plane](https://velog.velcdn.com/images/keviness0720/post/91d79e94-ca91-4850-95bb-385247ca3897/image.png)
+
+
+### **User Plane**
+  * For transport of user data // user측면에서 data를 전송할 때 사용하는 protocol
+  ![User Plane](https://velog.velcdn.com/images/keviness0720/post/c980e973-a093-4068-a375-6957917f13c6/image.png)
+
+<br>
+
+## **UMTS Handover**
+
+<hr>
+
+  * Hand handover
+    - This form of handover is essentially the same as that used for 2G networks where one link is broken and another established.
+  * Soft handover
+    - This form of handover is a more gradual and the UE communicates simultaneously with more than one Node B or base station during the handover process.
+  * Softer handover
+    - Not a full form of UMTS handover, but the UE communicates with more than one sector managed by the same NodeB.
+  * Horizontal handover
+    - 동종망간 핸드오버 (ex.WCDMA -> WCDMA(사용자가 바뀌는 경우)
+  * Vertical handover
+    - 이종망간 핸드오버 ( 4G -> 3G -> 4G // GSM -> WCDMA -> GSM)
+    - UMTS inter RAT handover
+      - This form of handover occurs when mobiles have to change between Radio Access Technologies, e.g. UMTS to / from GSM or UMTS to / from 4G LTE, etc
 ---
 ■ Handover from UMTS to GSM
-![](https://velog.velcdn.com/images/keviness0720/post/c71e6838-7180-4b42-9f51-4141ac20f7ce/image.png)
+  ![](https://velog.velcdn.com/images/keviness0720/post/c71e6838-7180-4b42-9f51-4141ac20f7ce/image.png)
 
 ■ Handover from GSM to UMTS
-![](https://velog.velcdn.com/images/keviness0720/post/bf125b60-0e4a-44a7-9fca-9cf092f8d76c/image.png)
-## Authentication
+  ![](https://velog.velcdn.com/images/keviness0720/post/bf125b60-0e4a-44a7-9fca-9cf092f8d76c/image.png)
+<br>
+
+## **Authentication**
 
 <hr>
 
-![](https://velog.velcdn.com/images/keviness0720/post/67816c01-2e47-4336-bf87-66c50806ce54/image.png)
+  ![](https://velog.velcdn.com/images/keviness0720/post/67816c01-2e47-4336-bf87-66c50806ce54/image.png)
 
 
     

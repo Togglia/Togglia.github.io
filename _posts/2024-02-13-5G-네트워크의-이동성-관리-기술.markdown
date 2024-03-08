@@ -1,0 +1,151 @@
+---
+title: 5G 네트워크의 이동성 관리 기술
+author: khs
+date: 2024-02-13 12:00:00 +0800
+categories: [무선통신망공학, 7주차]
+tags: [Network]
+pin: true
+math: true
+mermaid: true
+ 
+---
+
+## **Content**
+
+<hr>
+
+>  - 5G 네트워크의 이동성 관리 기술
+
+<br>
+
+# **5G 네트워크의 이동성 관리 기술**
+
+<br>
+ 
+## **4G 네트워크의 이동성 관리기술**
+
+<hr>
+
+  * Centralized MM
+    - MME(Mobility Management Entity)와 S-GW(Serving Gateway), P-GW(Packet Data Network Gateway) 등의 Mobility Anchor에서 이동성을 관리하고 트래픽을 처리하는 중앙 집중형 이동성 관리기술
+
+  * 문제점
+    - SPOF(Single Point of Failure) 
+      - 로컬 네트워크 내에서 처리할 수 있는 트래픽도 모두 앵커 포인트를 통해 전달
+      - 앵커 포인트가 Failure 상태에 있으면 통신 할 없음
+    - 이동성 관리 기능을 선택적으로 제공하는 기능 불가능
+      - 이동성 관리가 필요하지 않는 노드에도 일괄적으로 이동성 관리 제공
+    - 계층적 망 구조 기반 중앙 집중형 이동성 관리 기술
+      - 급격히 증가하는 모바일 인터넷 트래픽 수요를 감당하기 어려움
+      - 트래픽이 앵커 포인트로 집중되어 확장성이 낮음
+
+<br>
+
+## **평명형,분산형 이동성 관리 기술**
+
+<hr>
+
+  * LISP(Locator-Identifier Separation Protocol)
+  * DMM(Distributed Mobility Management)
+
+<br>
+
+## **LISP(Locator-Identifier Separation Protocol)**
+
+* **등장배경**
+  - 전통적인 인터넷의 문제점
+    - IP 주조의 단일 주소 체계를 통해 노드 식별과 라우팅의 두가지 기능 수행
+    - 멀티 호밍, 트래픽 엔지니어링, 주소 할당&관리 등이 어려움
+    - 주소 자원 측면에서 IPv4 주소 고갈과 집약 문제
+  - 2006년 10월 열린 Internet Architecture Board-Routing and Addressing Workshop에서 인터넷 라우팅 테이블이 커짐에 따라 발생하는 문제점을 인식하고 이를 해결하기 위해 위치자(Locator)와 식별자(Identifier)를 분리하는 연구 시작
+  - EID(Endpoint Identifier)와 RLOC(Routing Locator)를 분리
+    - 큰 규모의 네트워크에서도 라우팅이 잘 동작하려면 위치자는 토폴로지에 맞게 할당되어야 하고 토폴로지가 변경되면 위치자도 변경되도록 함
+
+* **특징**
+  - 네트워크 기반 기술
+    - 네트워크가 이동성 관리
+    - 단말의 수정이 필요 없음(단말 IP를 EID로 간주)
+  - 멀티 호밍(multi-homing) 지원
+    - 하나의 EID가 여러 개의 RLOC와 매핑 가능
+    - 네트워크 장애 대비
+    - Load balancing
+    - 향상된 이동성 제공
+
+* **LISP-MN(Locator-Identifier Separation Protocol Mobile Node)**
+  - 2009년에 제안
+  - LISP기술을 이용하여 Mobility 기능을 제공하는 기술
+  - 단말 기반 이동성 지원 기술
+  - LISP-MN 지원 단말은 자체적으로 하나의 LISP site로 동작
+  - Control plane과 Data plane 분리
+  - non-LISP site 내 노드와 통신 가능
+    - PITR(Proxy Ingress Tunnel Router)/PETR(Proxy Egress Tunnel Router)의 엔티티 활용
+  - 동작
+    - LISP-MN 지원 단말은 자체적으로 하나의 LISP site로 동작
+    - LISP-MN 지원 단말이 켜지면 내부적으로 EID 할당
+    - 내장된 ETR &ITR(xTR)은 Provider로 부터 IP 주소(RLOC)를 할당 받은 뒤 EID-RLOC 매핑을 만들어 MS(Map Server)에 등록
+    - 단말이 다른 지역으로 이동하면 RLOC는 변경되지만 EID는 그대로 유지되므로 이 EID를 이용하여 CN과 끊김 없이 통신 가능
+    
+    ![](https://velog.velcdn.com/images/keviness0720/post/a72eb2f4-f179-459c-8d91-3057036991c8/image.png)
+
+  - **한계**
+      - ITR(Ingress Tunnel Router), ETR(Egress Tunnel Router), MS(Map Server), R(Map Resolver) 등 의 엔티티 설치
+      - ITR, ETR에 트래픽이 일시적으로 집중될 수 있음
+      - PITR, PETR에 일시적 트래픽 집중, 비최적 경로, 삼각 라우팅 등 문제 발생
+        √ non-LISP site 내 노드와 통신시 PITR, PETR이 일시적으로 anchor point 동작
+      - 단말 기반 이동성
+        √ 단말이 xTR을 내장하고 LISP 제어 기능을 모두 처리
+        √ 단말의 컴퓨팅 능력, 전력 소모
+
+<br>
+
+## **DMM(Distributed Mobility Management)**
+<hr>
+
+### **개요**
+  - 단일 이동성 앵커(Mobility Anchor)를 없애고 단일 이동성 앵커가 담당하던 기능들을 네트워크 곳곳에 분산하여 다수의 MA들이 독립적으로 자신의 영역에 위치한 단말들의 이동성 관리를 지원하는 기술
+ 
+### **Host-based DMM vs. Network-based DMM**
+
+  - **Host-based DMM**: 
+    - 이동성 제공을 위한 관리/제어 시그널링 등 절차를 단말과 네트워크 모두에서 처리하는 기술
+    - 네트워크 뿐만 아니라 단말에도 이동성 관련 기능 탑재
+    - 단말말의 컴퓨팅 파워, 전력 소모 영향
+
+  - **Network-based DMM**: 
+    - 이동성 기능을 제공하면서 단말의 수정을 요구하지 않거나 최소한의 수정만을 요구
+    - 이동성 제공을 위한 관리/제어 시그널링 등의 절차를 단말이 아닌 네트워크에서 수행
+      - 단말의 부담이 적음
+    - 단말 기반 DMM과 마찬가지로 단말이 이동할 때 기존 세션을 계속 유지한다면 그동안 거쳤던 모든 MA가 해당 단말의 reachability를 위해 binding 정보를 저장하고 터널을 관리 해야함
+
+### **Fully Distributed DMM vs. Partially Distributed DMM**
+
+  - **Fully Distributed DMM**: 
+  
+    - 이동성 기능 제공을 위해 필요한 관리 정보들이 특정 엔티티에 집중되지 않고 여러 노드에 분산되어 저장되는 형태
+    - HoA(Home Address), CoA(Care of Address) 매핑과 같은 이동성 정보가 여러 관리 노드에 분산되어 관리
+    - 네트워크 노드 부하 발생
+      - 매핑 저장 시에 해당 정보를 모든 관리 노드에 플러딩 하거나 매핑 질의가 오면 해당 질의를 모든 관리 노드에 플러딩 필요
+    
+  <p align="center">
+    <img src="https://velog.velcdn.com/images/keviness0720/post/bdf2ec50-192c-4923-ade6-a81ef883368d/image.png" height="70%" width="70%">
+  </p>
+  
+    
+
+  - **Partially Distributed DMM**: 
+
+    - 이동성 기능을 제공하는데 필요한 정보를 관리하는 노드가 Mobility agent와 분리되어 집중된 형태로 존재
+    - MN이 네트워크에 접속하면 여러 MA 중 해당 MN을 담당하는 MA는 MN에게 HoA를 할당 하고 해당 MN의 정보를 중앙 집중형 Control Function에 등록
+    - Control Function에 장애가 생기면 이동성 서비스 제공 불가
+         
+  <p align="center">
+    <img src="https://velog.velcdn.com/images/keviness0720/post/53066248-b2da-47d0-8207-aef014d15060/image.png" height="70%" width="70%">
+  </p>       
+   
+
+
+<br>
+
+**참고자료**
+
+> Ref.) 서지훈, 강유화, 김재호, 전선미, 박노익, “5G 네트워크를 위한 이동성 관리 기술동향” 전자통신동향분석 제31권 제1호 2016년 02월

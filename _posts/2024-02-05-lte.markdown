@@ -10,7 +10,8 @@ mermaid: true
  
 ---
 
-## Content
+## **Content**
+
 <hr>
 
 >  - LTE
@@ -22,7 +23,7 @@ mermaid: true
 
 <br>
 
-## 이동통신 발전
+## **이동통신 발전**
 
 <hr>
 
@@ -31,11 +32,11 @@ mermaid: true
 
 <br>
 
-# <span style="color:gray "> LTE 
+# **LTE**
 
 <hr>
 
-## Long Term Evolution
+## **Long Term Evolution**
 
 <hr>
 
@@ -55,7 +56,7 @@ mermaid: true
 
 <br>
 
-## OFDM(Orthogonal Frequency division Multiplexing)
+## **OFDM(Orthogonal Frequency division Multiplexing)**
 
 <hr>
 
@@ -86,7 +87,7 @@ mermaid: true
 
 <br>
 
-## MIMO(Multipli Input Multiple Output)
+## **MIMO(Multipli Input Multiple Output)**
 
 <hr>
 
@@ -101,7 +102,7 @@ mermaid: true
 
 <br>
 
-## CA(Carrier Aggregation)
+## **CA(Carrier Aggregation)**
 
 <hr>
 
@@ -112,20 +113,20 @@ mermaid: true
 
 <br>
 
-## LTE구조
+## **LTE구조**
 
 <hr>
 
 ![LTE 구조](https://velog.velcdn.com/images/keviness0720/post/7f73bbb5-69be-4dc4-9999-14521a39900d/image.png)
 
 
-### UE(User Eqiupment)
+### **UE(User Eqiupment)**
 
 - 사용자 단말
 - Smartphone, USB dongle, 태블릿
 - USIM
 
-### eNB(Evolved Node B)
+### **eNB(Evolved Node B)**
 
 * LTE 기지국
 * UE와 LTE 네트워크 간에 무선 연결을 제공
@@ -137,7 +138,7 @@ mermaid: true
   - Radio Bearer(RB) Control 
   - Inter-Cell Interference Coordination 
   
-### MME(Mobility Management Entity)
+### **MME(Mobility Management Entity)**
   * E-UTRAN의 주요 제어 엔티티
   * 사용자 인증 및 사용자 프로필 다운로드를 위해 HSS와 통신
   * NAS(Non-Access Stratum) 시그널링을 사용하여 UE에 EPS Mobility Management(EMM) 및 EPS Session Management(ESM) 기능 제공
@@ -148,12 +149,12 @@ mermaid: true
     - Mobility 관리
     - EPS bearer 관리
 
-### S-GW(Serving Gateway)
+### **S-GW(Serving Gateway)**
   * E-UTRAN과의 인터페이스를 종료
   * inter-eNB 핸드오버 및 inter-3GPP 핸드오버를 위한 데이터 연결의 지역 이동성 anchor point 역할 수행
 
 
-### P-GW(PDN Gateway)
+### **P-GW(PDN Gateway)**
   * UE가 PDN(Packet Data Network)에 액세스할 수 있도록 IP 주소를 할당
   * 주요 기능
     - IP 할당
@@ -165,30 +166,30 @@ mermaid: true
     - Per-SDF/Per User에 대한 요금 부과
     - OFCS에 CDR(요금 데이터 레코드) 전달
 
-### HSS 
+### **HSS** 
   - Central DB for user profile
   - 사용자 인증 정보 및 사용자 프로필을 MME에 제공
     - Key 정보
     - 가입한 상품에 맞는 QoS 등급 정보(우선순위, 최대 사용가능 대역폭 등)
 
-### PCRF(Policy and Charging Control Function)
+### **PCRF(Policy and Charging Control Function)**
   -  정책 및 요금 제어 엔티티
   -  SDF(Service Data Flow)에 대한 정책 결정
   -  PCEF(P-GW)에 PCC(Policy and Charging Control) rules(QoS and charging rules) 정책 제공
 
-### SPR(Subscriber Profile Repository)
+### **SPR(Subscriber Profile Repository)**
   - UE(subscriber)별 Policy 및 Charging rule(Access Profile) 저장 DB
   - PCRF에 가입 정보(가입자별 액세스 프로필) 제공
   - 정보를 받은 PCRF는 가입자 기반 정책을 수행하고 PCC 규칙을 생성함
 
-### OSC(Online Charging System)
+### **OSC(Online Charging System)**
   - real-time credit control
   - volume, time, event에 따른 요금 부과 기능
 
-### OFCS(Offline Charging System)
+### **OFCS(Offline Charging System)**
   - CDR(요금 데이터 레코드) 기반의 요금 부과 정보 제공
 
-### Traffic flow on the LTE network
+### **Traffic flow on the LTE network**
   - GTP(GPRS Tunnelling Protocol) -> GPRS 시스템에서 터널링을 위한 프로토콜 
     - 터널링 -> 정해진구간을 명확히 지나기위해
   - TEID(Tunnel Endpoint Identifier) -> 총 4개의 TEID 생성
@@ -197,7 +198,7 @@ mermaid: true
 ![트래픽 흐름](https://velog.velcdn.com/images/keviness0720/post/425a212c-026b-4475-b7e1-af060243d056/image.png)
 
 
-### Traffic flow on the LTE network(UE가 google에 접속하는 예)
+### **Traffic flow on the LTE network(UE가 google에 접속하는 예)**
 ![트래픽 흐름 예시](https://velog.velcdn.com/images/keviness0720/post/62b3f2a5-56b8-4f5d-ba85-b0ef3e221495/image.png)
 
 

@@ -19,11 +19,7 @@ mermaid: true
 
 <br>
 
-#  <span style="color:gray "> Mobile IPv6
-
-<hr>
-
-## 모바일 IPv6의 특징
+## **모바일 IPv6의 특징**
 
 <hr>
 
@@ -64,7 +60,7 @@ mermaid: true
 
 <br>
 
-## Smooth Handoff
+## **Smooth Handoff**
 
 * MN이 A 망에서 B 망으로 이동하여 서비스를 받던 도중 임의의 C 망으로 이동
 * CN은 이동 노드가 아직 B에 있는 것으로 인식하기 때문에 패킷을 B 망으로 전송

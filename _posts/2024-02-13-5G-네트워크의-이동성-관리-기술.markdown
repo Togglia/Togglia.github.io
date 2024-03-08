@@ -119,29 +119,27 @@ mermaid: true
 
 ### **Fully Distributed DMM vs. Partially Distributed DMM**
 
-  - **Fully Distributed DMM**: 
-  
+  - **Fully Distributed DMM**
+
+      ![](https://velog.velcdn.com/images/keviness0720/post/bdf2ec50-192c-4923-ade6-a81ef883368d/image.png)
+
     - 이동성 기능 제공을 위해 필요한 관리 정보들이 특정 엔티티에 집중되지 않고 여러 노드에 분산되어 저장되는 형태
     - HoA(Home Address), CoA(Care of Address) 매핑과 같은 이동성 정보가 여러 관리 노드에 분산되어 관리
     - 네트워크 노드 부하 발생
       - 매핑 저장 시에 해당 정보를 모든 관리 노드에 플러딩 하거나 매핑 질의가 오면 해당 질의를 모든 관리 노드에 플러딩 필요
-    
-  <p align="center">
-    <img src="https://velog.velcdn.com/images/keviness0720/post/bdf2ec50-192c-4923-ade6-a81ef883368d/image.png" height="70%" width="70%">
-  </p>
-  
-    
 
+     
+    
+      
   - **Partially Distributed DMM**: 
+
+    ![](https://velog.velcdn.com/images/keviness0720/post/53066248-b2da-47d0-8207-aef014d15060/image.png)
 
     - 이동성 기능을 제공하는데 필요한 정보를 관리하는 노드가 Mobility agent와 분리되어 집중된 형태로 존재
     - MN이 네트워크에 접속하면 여러 MA 중 해당 MN을 담당하는 MA는 MN에게 HoA를 할당 하고 해당 MN의 정보를 중앙 집중형 Control Function에 등록
     - Control Function에 장애가 생기면 이동성 서비스 제공 불가
-         
-  <p align="center">
-    <img src="https://velog.velcdn.com/images/keviness0720/post/53066248-b2da-47d0-8207-aef014d15060/image.png" height="70%" width="70%">
-  </p>       
-   
+
+    
 
 
 <br>

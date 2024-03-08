@@ -3,14 +3,14 @@ title: LTE Handover
 author: khs
 date: 2024-02-05 18:00:00 +0800
 categories: [무선통신망공학, 5주차]
-tags: [Network]
+tags: [Network,Handover,UMTS]
 pin: true
 math: true
 mermaid: true
  
 ---
 
-## Content
+## **Content**
 <hr>
 
 > - LTE Handover

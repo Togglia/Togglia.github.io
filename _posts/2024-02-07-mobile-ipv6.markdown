@@ -3,7 +3,7 @@ title: Mobile IPv6
 author: KHS
 date: 2024-02-07 18:00:00 +0800
 categories: [무선통신망공학, 6주차]
-tags: [Network]
+tags: [Network, Mobile IPv6]
 pin: true
 math: true
 mermaid: true

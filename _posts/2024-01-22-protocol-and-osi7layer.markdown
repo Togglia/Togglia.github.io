@@ -3,22 +3,25 @@ title: Protocol and OSI7Layer
 author: khs
 date: 2024-01-22 11:33:00 +0800
 categories: [무선통신망공학, 1주차]
-tags: [Network]
+tags: [Network,Protocol,OSI7Layer]
 pin: true
 math: true
 mermaid: true
  
 ---
-## Network
+## **Network**
 <hr>
+
 통신분야에서 단말기 등을 접속하기 위해 사용되는 단말기기, 선로 및 교환기 등으로 구성되는 전송매체 
 
-## CBN vs PBN
+<br>
+
+## **CBN vs PBN**
 <hr>
 
-
 - CBN(circuit-based network)
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/CBN1.png" alt="CBN" width = "70%" height = "70%">
+
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/CBN1.png" alt="CBN" width = "70%" height = "70%">
 
     - 전화망 (PSTN)
     - connection-oriented service
@@ -31,7 +34,8 @@ mermaid: true
     
 
 - PBN(Packet-based network)
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/PBN.png" alt="PBN" width = "70%" height = "70%">    
+
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/PBN.png" alt="PBN" width = "70%" height = "70%">    
     
     - Internet
     - connection-less service
@@ -45,9 +49,12 @@ mermaid: true
     
     듣는 호출 쪽의 경험과, 전화 벨이 울리는 받는 쪽의 경험은 다르다는 점을 기억해야 합니다. 링 백 톤은 공중 교환 전화망(PSTN) 및 휴대전화 망의 기능으로, 호출자에게 고유하고 개인화 된 통화 경험을 제공
   
+<br>
 
-## Protocol
+## **Protocol**
+
 <hr>
+
 <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/IP protocol.png" alt="IP protocol" width = "70%" height = "70%">
 
 - 통신을 위한 규약(약속) , 의사소통, IP, TCP, 케이블규격 등등
@@ -58,8 +65,9 @@ mermaid: true
     - meaning
     - timing → 동기식, 비동기식
 
+<br>
 
-## OSI 7 Layer
+## **OSI 7 Layer**
 
 <hr>
 
@@ -67,22 +75,23 @@ mermaid: true
 - 7개의 계층으로 이루어진 통신을 위한 프로토콜 스택
 - peer to peer protocol stack
 
-<img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/OSI7LAYER.png" alt="OSI7LAYER" width = "100%" height = "70%">
+    <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/OSI7LAYER.png" alt="OSI7LAYER" width = "100%" height = "70%">
 
-### 7계층 : Application(응용) Layer
+
+### **7계층 : Application(응용) Layer**
 
 - 목적 : 사용자의 편의성 제공, 프로그램
 - GUI로 구성된 경우가 많다.
 - 통신을 위한 통신 어플리케이션
 - 프로토콜 → ex) HTTP,FTP
 
-### 6계층 : Presentation(표현) Layer
+### **6계층 : Presentation(표현) Layer**
 
 - 목적  : 어떻게 Display 할 것인가??
 - Codec(coding + decoding) 관련
 - 압축, 암호화 → ex) avi, mp3, mp4
 
-### 5계층 : Session(세션) Layer
+### **5계층 : Session(세션) Layer**
 
 - 목적 : 사용자의 구분, 누구와 통신 할 것인가?
 - Session ID : 누구와 통신 할 것인지를 구분할 수 있도록 알려주는 구분자 ID → 유일성을 가진다.
@@ -94,7 +103,7 @@ mermaid: true
     - Session을 커넥션이라 생각하면 그 커넥션을 잡기 위한 ID
     - 영역에 따라 의미가 달라 → 실무에서는 연결성
 
-### 4계층 : Transport(전송) Layer
+### **4계층 : Transport(전송) Layer**
 
 - 목적 : Port에 따라서 어떻게 전송 할 것인가?
     - 어떤 Port로 전송 할 것인가?
@@ -108,7 +117,7 @@ mermaid: true
         - retransmission(응답이 오지 않아 재전송), timeout 특성을 가지고 흐름제어, 오류제어
         - non-real-time service: email 서비스, 문자 서비스
 
-### 3계층 : Network(네트워크) Layer
+### **3계층 : Network(네트워크) Layer**
 
 - 목적 : 데이터 전송
 - end-to-end (source-to-destination)
@@ -122,7 +131,7 @@ mermaid: true
     - forwarding table (최종 결과물)   
     <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/Port_forwading.png" alt="Port_forwading" width = "100%" height = "70%">       
 
-### 2계층 : Data-link(데이터 링크) Layer
+### **2계층 : Data-link(데이터 링크) Layer**
 
 - 목적 : 데이터 전송
 - hop-by-hop (per-hop behavior, smart phone-기지국) , 노드간 거리
@@ -151,7 +160,7 @@ mermaid: true
     - ARP table
         - 네트워킹에서 사용되는 데이터 구조로, Local network segment에서 IP 주소와 해당 MAC (Media Access Control) 주소 간의 매핑을 제공한다. ARP 테이블은 일반적으로 컴퓨터, 라우터 및 스위치와 같은 장치에 의해 유지된다.
 
-### 1계층 : Physical(물리) Layer
+### **1계층 : Physical(물리) Layer**
 
 - 목적 : 데이터를 비트형태로 표현
     - 네트워크로의 하드웨어 전송
@@ -162,13 +171,15 @@ mermaid: true
 - Topology: 망의 구성
     - Star, mesh, bus…
 
-## 예시로 알아보는 계층
+<br>
+
+## **예시로 알아보는 계층**
 
 <hr>
 
 <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240122/Untitled.png" alt="Untitled" width = "100%" height = "70%">
 
-예시 1
+**예시 1**
 - User가 사용할 수 있는 장치(=단말기)
     - pc, smartphone
 - kakao talk 다운로드->설치(L6, L4)->실행(L7)
@@ -183,7 +194,7 @@ mermaid: true
 
 ---
 
-예시 2 
+**예시 2** 
 - 카카오톡 실행(L7)-->철수를 주소록에서 찾고 철수(L5)와의
 
     대화창을 실행(L4)

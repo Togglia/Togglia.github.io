@@ -3,15 +3,13 @@ title: CDMA
 author: khs
 date: 2024-02-03 12:00:00 +0800
 categories: [무선통신망공학, 3주차]
-tags: [Network]
+tags: [Network,CDMA,Handover]
 pin: true
 math: true
 mermaid: true
  
 ---
-# CDMA
-
-<hr>
+# **CDMA**
 
 CDMA 방식을 사용하여 어떻게 handover를 사용하는지 
 
@@ -19,7 +17,9 @@ CDMA 방식을 사용하여 어떻게 handover를 사용하는지
 - CDMA
 - handover
 
-## IS-95
+<br>
+
+## **IS-95**
 
 <hr>
 
@@ -30,13 +30,9 @@ CDMA 방식을 사용하여 어떻게 handover를 사용하는지
 - 주요 서비스: 음성, 문자
 - 국내상용화시기: 1996년
 
+<br>
 
-
-# CDMA
-
-<hr>
-
-## CDMA 도입배경
+## **CDMA 도입배경**
 
 <hr>
 
@@ -69,34 +65,35 @@ CDMA 방식을 사용하여 어떻게 handover를 사용하는지
     - 1993년 국내 정보통신부에서 공식적으로 CDMA를 이동 통신 방식으로 선정
     - 1996년 세계 최초로 국내에서 상용화 성공
 
-## CDMA 개요
+<br>
+
+## **CDMA 개요**
 
 <hr>
 
-### 다중접속 방식
+### **다중접속 방식**
 
 <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/다중접속방식.png" alt="다중접속방식" width = "100%" height = "70%">
 
-### FDMA(Frequency Division Multiple Access)
+### **FDMA(Frequency Division Multiple Access)**
 
 - 하나의 채널에 하나의 주파수 필요
 - 주파수를 다르게 쓰고 출력은 똑같다.
 - 문제 → 사용할 수 있는 주파수가 유한, 간섭 문제
 - 해결 → 가드밴드를 사용하지만 비효율적
 
-### TDMA (Time Division Multiple Access)
-
+### **TDMA (Time Division Multiple Access)**
 - 하나의 주파수를 통해 각각 다른 time slot을 이용 여러 개의 통화 채널 구성
 - 시간을 나누어서
 
-### CDMA (Code Division Multiple Access)
+### **CDMA (Code Division Multiple Access)**
 
 - 각기 다른 코드를 사용하는 여러 명의 사용자가 하나의 주파수를 통해 접속. 즉, 하나의 물리 채널 내에 여러 개의 논리적인 채널이 존재
 - 코드 X bit = 데이터 → A가 전송한 데이터를 알기 위해서는 코드를 알아야 한다 → **기밀성**
 
     <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/다중접속방식_표.png" alt="다중접속방식_표" width = "100%" height = "70%">
 
-### 장단점
+### **장단점**
 
 - 장점
     - 아날로그 통신에 비해 용량이 증대
@@ -114,7 +111,7 @@ CDMA 방식을 사용하여 어떻게 handover를 사용하는지
     - 기지국 동기에 미국의 GPS 위성을 이용
     - 기지국 Engineering 및 최적화 작업이 복잡
 
-### CDMA 시스템
+### **CDMA 시스템**
 
 <img src = "https://raw.githubusercontent.com/Togglia/Togglia.github.io/main/_posts/image/20240203/CDMA시스템.png" alt="CDMA시스템" width = "100%" height = "70%">
 

@@ -3,7 +3,7 @@ title: 5G
 author: khs
 date: 2024-02-12 12:00:00 +0800
 categories: [무선통신망공학, 7주차]
-tags: [Network]
+tags: [Network,5G]
 pin: true
 math: true
 mermaid: true

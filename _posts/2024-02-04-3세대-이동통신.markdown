@@ -3,7 +3,7 @@ title: 3세대 이동통신
 author: khs
 date: 2024-02-04 12:00:00 +0800
 categories: [무선통신망공학, 4주차]
-tags: [Network]
+tags: [Network,3세대 이동통신,WCDMA,UMTS]
 pin: true
 math: true
 mermaid: true

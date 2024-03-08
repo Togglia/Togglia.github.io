@@ -3,7 +3,7 @@ title: Mobile IPv4
 author: khs
 date: 2024-02-07 12:00:00 +0800
 categories: [무선통신망공학, 6주차]
-tags: [Network]
+tags: [Network,Mobile IPv4]
 pin: true
 math: true
 mermaid: true
